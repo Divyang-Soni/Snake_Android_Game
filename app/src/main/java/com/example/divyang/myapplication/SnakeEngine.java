@@ -69,7 +69,7 @@ public class SnakeEngine extends SurfaceView implements Runnable {
 
 
     // to control pausing
-    private volatile boolean isPlaying;
+    private volatile boolean isPlaying = false;
 
     // A canvas for our paint
     private Canvas canvas;
@@ -294,7 +294,7 @@ public class SnakeEngine extends SurfaceView implements Runnable {
         switch (motionEvent.getAction() & MotionEvent.ACTION_MASK) {
             case MotionEvent.ACTION_UP:
 
-                switch(heading){
+               /* switch(heading){
                     case UP:
                         heading = Heading.UP;
                         break;
@@ -307,9 +307,9 @@ public class SnakeEngine extends SurfaceView implements Runnable {
                     case LEFT:
                         heading = Heading.LEFT;
                         break;
-                }
+                }*/
 
-                /*if (motionEvent.getX() >= screenX / 2) {
+                if (motionEvent.getX() >= screenX / 2) {
                     switch(heading){
                         case UP:
                             heading = Heading.RIGHT;
@@ -339,7 +339,7 @@ public class SnakeEngine extends SurfaceView implements Runnable {
                             heading = Heading.UP;
                             break;
                     }
-                }*/
+                }
         }
         return true;
     }

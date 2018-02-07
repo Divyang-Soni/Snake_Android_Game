@@ -5,10 +5,13 @@ import android.graphics.Point;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Display;
+import android.view.View;
+import android.widget.Button;
 
 public class MyFirstApp extends Activity {
 
     SnakeEngine snakeEngine;
+    protected Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,18 @@ public class MyFirstApp extends Activity {
 
         // Make snakeEngine the view of the Activity
         setContentView(snakeEngine);
+
+
+        button = (Button) findViewById(R.id.button_id);
+        if(button!=null){
+            button.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    button.setVisibility(View.GONE);
+                    onResume();
+                }
+            });
+        }
+
     }
 
 
